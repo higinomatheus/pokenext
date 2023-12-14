@@ -1,0 +1,16 @@
+.about {
+  text-align: center;
+  padding: 1.6em;
+}
+
+.about h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.about p {
+  line-height: 1.5;
+  margin-bottom: 1em;
+  margin: 0 auto;
+  max-width: 500px;
+}

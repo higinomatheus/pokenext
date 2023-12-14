@@ -1,0 +1,48 @@
+.items_in_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+#home__title h1 {
+  color: #e33d33;
+  margin-right: 0.4em;
+  text-align: center;
+}
+
+#home__title span {
+  color: #333;
+}
+
+#container__pesquisar {
+  padding: 1em;
+}
+
+#container__pesquisar__input {
+  padding: 0.9em;
+  margin-right: 1em;
+  border: 1px solid rgb(0, 0, 0, 0.2);
+  border-radius: 5px;
+  width: 100%;
+}
+
+#container__pesquisar__btn {
+  color: #fff;
+  background-color: #e33d33;
+  padding: 0.7em 1.2em;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+#pokemon__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1em;
+}
