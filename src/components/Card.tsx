@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { Pokemon } from "@/lib/definitions";
 
-import styles from "../../styles/Card.module.css";
+import styles from "../styles/Card.module.css";
 
 const Card = ({ pokemon }: { pokemon: Pokemon }) => {
   const numberFormatter = (num: number): string => {
@@ -27,7 +27,7 @@ const Card = ({ pokemon }: { pokemon: Pokemon }) => {
       />
       <p>#{pokemon.id}</p>
       <h3>{pokemon.name}</h3>
-      <Link href={`#`}>Detalhes</Link>
+      <Link href={`/pokemon/${pokemon.id}`}>Detalhes</Link>
     </div>
   );
 };

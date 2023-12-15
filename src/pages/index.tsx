@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 import logo from "../../public/images/pokeball.png";
 import { Pokemon } from "@/lib/definitions";
-import Card from "./components/Card";
+import Card from "../components/Card";
 
 export const getStaticProps = async () => {
   const maxPokemons = 251;

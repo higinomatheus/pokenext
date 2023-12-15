@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import logo from "../../../public/images/pokeball.png";
+import logo from "../../public/images/pokeball.png";
 
-import styles from "../../styles/Navbar.module.css";
+import styles from "../styles/Navbar.module.css";
 
 const Navbar = () => {
   return (
