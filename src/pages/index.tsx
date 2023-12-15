@@ -2,12 +2,8 @@ import Image from "next/image";
 
 import styles from "@/styles/Home.module.css";
 import logo from "../../public/images/pokeball.png";
-
-interface Pokemon {
-  id: number;
-  name: string;
-  url: string;
-}
+import { Pokemon } from "@/lib/definitions";
+import Card from "./components/Card";
 
 export const getStaticProps = async () => {
   const maxPokemons = 251;
@@ -43,17 +39,19 @@ const Home = ({ pokemons }: { pokemons: Pokemon[] }) => {
         </h1>
         <Image src={logo} width={50} height={50} alt="Ícone da pokeball" />
       </div>
-      <div className={styles.items_in_row} id={styles.container__pesquisar}>
-        <input
-          id={styles.container__pesquisar__input}
-          placeholder="Pesquise pelo pokémon desejado"
-        />
-        <button id={styles.container__pesquisar__btn}>Pesquisar</button>
-      </div>
-      <div id={styles.pokemon__container}>
-        {pokemons.map((item: Pokemon) => (
-          <p key={item.id}>{item.name}</p>
-        ))}
+      <div className={styles.home__content}>
+        <div className={styles.items_in_row} id={styles.container__pesquisar}>
+          <input
+            id={styles.container__pesquisar__input}
+            placeholder="Pesquise pelo pokémon desejado"
+          />
+          <button id={styles.container__pesquisar__btn}>Pesquisar</button>
+        </div>
+        <div id={styles.pokemon__container}>
+          {pokemons.map((item: Pokemon) => (
+            <Card key={item.id} pokemon={item} />
+          ))}
+        </div>
       </div>
     </>
   );
