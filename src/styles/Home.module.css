@@ -21,7 +21,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 70%;
+  width: 82.5%;
 }
 
 #container__pesquisar {
@@ -44,4 +44,9 @@
   align-items: center;
   margin: 0 auto;
   padding: 1em;
+}
+@media screen and (max-width: 680px) {
+  #pokemon__container {
+    justify-content: center;
+  }
 }
