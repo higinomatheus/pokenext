@@ -16,6 +16,7 @@ const Card = ({ pokemon }: { pokemon: Pokemon }) => {
         src={url}
         width={120}
         height={120}
+        priority
         alt={`Imagem do ${pokemon.name}`}
       />
       <p>#{pokemon.id}</p>

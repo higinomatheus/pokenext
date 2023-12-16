@@ -27,7 +27,6 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context: any) => {
-  console.log(context);
   const id = context.params.pokemonId;
   const baseUrl = "https://pokeapi.co/api/v2/pokemon";
 
