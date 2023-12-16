@@ -1,20 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Pokemon } from "@/lib/definitions";
+import { Pokemon, idPokemonFormatter } from "@/lib/definitions";
 
 import styles from "../styles/Card.module.css";
 
 const Card = ({ pokemon }: { pokemon: Pokemon }) => {
-  const numberFormatter = (num: number): string => {
-    if (num < 100) {
-      return num.toString().padStart(3, "0");
-    } else {
-      return num.toString();
-    }
-  };
 
-  const id = numberFormatter(pokemon.id);
+  const id = idPokemonFormatter(pokemon.id);
   const url = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png`;
 
   return (
