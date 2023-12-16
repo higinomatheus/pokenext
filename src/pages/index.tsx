@@ -4,6 +4,7 @@ import styles from "@/styles/Home.module.css";
 import logo from "../../public/images/pokeball.png";
 import { Pokemon } from "@/lib/definitions";
 import Card from "../components/Card";
+import { useState } from "react";
 
 export const getStaticProps = async () => {
   const maxPokemons = 251;
@@ -31,6 +32,16 @@ export const getStaticProps = async () => {
 };
 
 const Home = ({ pokemons }: { pokemons: Pokemon[] }) => {
+  const [searchQuery, setSearchQuery] = useState<string>("");
+
+  const searchPokemons = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const filteredPokemons = pokemons.filter((pokemon) =>
+    pokemon.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <>
       <div className={styles.items_in_row} id={styles.home__title}>
@@ -43,12 +54,13 @@ const Home = ({ pokemons }: { pokemons: Pokemon[] }) => {
         <div className={styles.items_in_row} id={styles.container__pesquisar}>
           <input
             id={styles.container__pesquisar__input}
+            value={searchQuery}
             placeholder="Pesquise pelo pokémon desejado"
+            onChange={searchPokemons}
           />
-          <button id={styles.container__pesquisar__btn}>Pesquisar</button>
         </div>
         <div id={styles.pokemon__container}>
-          {pokemons.map((item: Pokemon) => (
+          {filteredPokemons.map((item: Pokemon) => (
             <Card key={item.id} pokemon={item} />
           ))}
         </div>
